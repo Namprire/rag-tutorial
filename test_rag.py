@@ -1,6 +1,9 @@
 from query_data import query_rag
 from langchain_community.llms.ollama import Ollama
 
+
+#using local llm for unit testing
+
 EVAL_PROMPT = """
 Expected Response: {expected_response}
 Actual Response: {actual_response}
