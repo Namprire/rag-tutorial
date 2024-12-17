@@ -25,6 +25,24 @@ def test_ticket_to_ride_rules():
         expected_response="10 points",
     )
 
+def test_3gpp_ts_23_003_1():
+    assert query_and_validate(
+        question="What are the three main components of an International Mobile Subscriber Identity (IMSI)? How do these components help in identifying a subscriber?",
+        expected_response="Mobile Country Code (MCC): A three-digit code that uniquely identifies the country of domicile of the mobile subscriber. Mobile Network Code (MNC): A two or three-digit code that identifies the home Public Land Mobile Network (PLMN) of the subscriber within the country. Mobile Subscriber Identification Number (MSIN): A unique identification number for the mobile subscriber within the PLMN.",
+    )
+
+def test_3gpp_ts_23_003_2():
+    assert query_and_validate(
+        question="Of what does the TMSI cinsists of?",
+        expected_response="The TMSI consists of 4 octets.",
+    )    
+
+def test_3gpp_ts_23_003_3():
+    assert query_and_validate(
+        question="What are Voice Group Call and Voice Broadcast Call References?",
+        expected_response='Specific instances of voice group calls (VGCS) and voice broadcast calls (VBS) within a given group call area are known by a "Voice Group Call Reference" or by a "Voice Broadcast Call Reference" respectively.',
+    )   
+
 
 def query_and_validate(question: str, expected_response: str):
     response_text = query_rag(question)
